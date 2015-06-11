@@ -39,7 +39,9 @@ about:flags – Chrome高级设置
 
 你在Chrome地址栏输入这个，就会出现如下截图，哈哈，万能吧！（还有好多，我只截了一部分哦）
 
-![此处输入图片的描述][1]
+
+![image](https://github.com/chenchenjoke/chromeJoker/images/bmI7by.png)
+
 ### chrome://plugin
 
 > 
