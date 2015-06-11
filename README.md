@@ -40,7 +40,8 @@ about:flags – Chrome高级设置
 你在Chrome地址栏输入这个，就会出现如下截图，哈哈，万能吧！（还有好多，我只截了一部分哦）
 
 
-![image](https://github.com/ChenChenJoke/Jokerchrome/images/bmI7by.png)
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/bmI7by.png)
+
 
 ### chrome://plugin
 
