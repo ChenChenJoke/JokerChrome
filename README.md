@@ -47,13 +47,13 @@ about:flags – Chrome高级设置
 
 这个查看的就是我们的chrome里内置的插件，比如比较长用的有各种银行安全登录插件，迅雷的插件（点你点击一个，下载地址的时候会用迅雷打开下载这个资源，注意：不是下载完种子点击种子，这有本质的区别）。另外，我们再插件里面也看到了我们的直播助手。如下图：
 
-[image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/plugin_cliponyu.png)
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/plugin_cliponyu.png)
 
 就是靠它，我们才能通过浏览器的js引擎，调用np的动态库，然后客户端的同学，获取我们调用的np插件时候传入的参数来做一些比如挂起直播助手或者尾端的操作。
 
 > 注意：chrome官方通在chrome42版本以及更高版本，默认关闭np插件，现在微端同学给出的临时解决反感，就是更改开关，但是这个不会是长久之计，不就之后估计chrome就要完全停用np插件了。通知如下图：
 
-> [image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/NPAPI.png)
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/NPAPI.png)
 
 ### 地址预测Omnibox,chrome://predictors/
 
