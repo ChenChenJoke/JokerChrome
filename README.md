@@ -49,24 +49,20 @@ about:flags – Chrome高级设置
 
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/plugin_cliponyu.png)
 
-就是靠它，我们才能通过浏览器的js引擎，调用np的动态库，然后客户端的同学，获取我们调用的np插件时候传入的参数来做一些比如挂起直播助手或者尾端的操作。
+就是靠它，我们才能通过浏览器的js引擎，调用np的动态库，然后客户端的同学，获取我们调用的np插件时候传入的参数来做一些比如挂起直播助手或微端的操作。
 
 > 注意：chrome官方通在chrome42版本以及更高版本，默认关闭np插件，现在微端同学给出的临时解决反感，就是更改开关，但是这个不会是长久之计，不就之后估计chrome就要完全停用np插件了。通知如下图：
 
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/NPAPI.png)
 
-### 地址预测Omnibox,chrome://predictors/
+### 地址预测chrome://predictors/
 
-通过 Omnibox 优化与用户的交互
+通过 Omnibox 优化与用户的交互，引入 Omnibox 是 Chrome 的一项创新， 并不是简单地处理目标的 URL。除了记录之前访问过的页面 URL，它还与搜索引擎的整合，并且支持在历史记录中进行全文搜索(比如，直接输入页面名称)。
 
-引入 Omnibox 是 Chrome 的一项创新， 并不是简单地处理目标的 URL。除了记录之前访问过的页面 URL，它还与搜索引擎的整合，并且支持在历史记录中进行全文搜索(比如，直接输入页面名称)。
+当用户输入时，Omnibox 自动发起一个行为，要么查找浏览记录中的 URL, 要么进行一次搜索。每一次发起的操作都会被加以评分，以统计它的性能。你可以在 Chrome 输入 chrome://predictors 来观察这些数据。由于图比较长，所以我切成了两个图让大家看的清楚些
 
-当用户输入时，Omnibox 自动发起一个行为，要么查找浏览记录中的 URL, 要么进行一次搜索。每一次发起的操作都会被加以评分，以统计它的性能。你可以在 Chrome 输入 chrome://predictors 来观察这些数据。
-
-
-> predictors图一
-> predictors图二
-
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/predictors_font.png)
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/predictors_end.png)
 
 Chrome 维护着一个历史记录，内容包括用户输入的前置文字，采用的行为，以命中的资数。 在上面的列表，你可以看到，当输入b时，有 91% 的机会尝试打开 Gmail. 如果再补充一个 a (就是 ba)， 打开 www.baidu.com 的可能性增加到 99.2%。
 
