@@ -133,7 +133,8 @@ http://blog.httpwatch.com/2015/01/16/a-simple-performance-comparison-of-https-sp
 
 ### memory-redirect浏览器内存消耗,chrome://memory-redirect
 
-> 图
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/memoryRedirect.png)
+
 
 ### 分析器,chrome://profiler
 
