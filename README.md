@@ -127,7 +127,7 @@ http://blog.httpwatch.com/2015/01/16/a-simple-performance-comparison-of-https-sp
 
 ### thumbnails浏览器快照,chrome://thumbnails
 
-![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/thumbnails.png.png)
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/thumbnails.png)
 
 
 
