@@ -104,13 +104,18 @@ iframe
 
 ### net-internals网络请求，chrome://net-internals
 
+
+##### 查询sokect
+
+socket transport_socket_pool  Idle占用
+
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/sokect.png)
+
+
 test测试
 
 
 DNS到期 Expired过期， 总数Capacity
-
-socket transport_socket_pool  Idle占用
-
 
 SPDY   Alternate Protocol Mappings备用协议映射
 
@@ -140,9 +145,12 @@ http://blog.httpwatch.com/2015/01/16/a-simple-performance-comparison-of-https-sp
 
 > MARK http://blog.jobbole.com/31178/  ,内存对比，优化方案
 
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/memoryRedirect.png)
 
 
 ### 追踪访问URL,chrome://tracing/ ,包括浏览器和渲染过程非常详细,
+
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/tracing.png)
 
 > MARK详细最终他的使用、以及意义拓展预计一天；
 
@@ -153,6 +161,10 @@ http://blog.httpwatch.com/2015/01/16/a-simple-performance-comparison-of-https-sp
 ### 用户行为分析，包括用户点击切换tab,chrome://user-actions
 
 > 主要手机用户行为，当过切换tab，而且包括浏览器点击（有效或者无效）
+
+
+
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/user-actions.png)
 
 
 
