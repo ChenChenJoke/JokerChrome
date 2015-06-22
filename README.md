@@ -130,9 +130,11 @@ Accept-Ranges: bytes
 ```
 
 其实看到这里的时候我突然有一个方法，chrome是如何获取缓存信息的，如果我们自己开发extension的时候如何获取缓存图片（不通过chrome内部机制）比如：ajax、直接导入、iframe如果我们可以读取chrome自带的缓存信息，是不是方面我们做一些用户信息收集类的操作。
-当然这部分获取信息，一定需要用户的授权。
+当然这部分获取信息，一定需要用户的授权。或者通过设置chrome的安全策略：Content-Security-Policy来指定加载资源
 
-注意chrome的安全策略：Content-Security-Policy
+附上 Content-Security-Policy 指令说明，http://www.2cto.com/Article/201307/230739.html，服务器端再返回的时候只要返回相应的头部信息就可以了。
+
+
 
 
 ### net-internals网络请求，chrome://net-internals
