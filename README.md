@@ -93,10 +93,26 @@ Chrome 维护着一个历史记录，内容包括用户输入的前置文字，�
 > MARK 此处挖掘chrome深度优化（一种备份于本地磁盘(local disk)，另一种则存储于内存(in-memory)中）
 
 ### 浏览器缓存,chrome:cache
-chrome://cache,这个缓存的内容，并不是所谓的缓存为具体文件，而是请求本身的缓存，chrome把请求头部信息和请求体
+chrome://cache,下面我们输入网址可以先来看一下，chrome到底都缓存了什么东西。
+第一张图是，我们的缓存列表，里面缓缓存了我们访问了code为2XX的数据，这个2XX指令码指的http的code
+可不是前后端同学自定义的code.跳转类的3开头的不会被缓存（301永久跳转,302临时跳转）,4XX也不会,5XX的暂时还没试过。
+关于code码的解释，附上一个链接。http://justcoding.iteye.com/blog/833058。这里解释的还可以。另外，如果像
+更深入了解的同学，可以看一下 http协议权威指南。也可以了解下restful思想，也就是Roy Fielding教授在参与定制http
+协议的时候主推的一种设计思想。也就是Http是应用层协议的原因之一（Apache基金会有一个开源项目Sling，这个项目就是完全
+基于Restful思想设计的，他们用jcr进行存储，url作为被操作项，request method本身作为操作符）。
+
+
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/cache1.png)
+
+
+扯远了，下面我们看一下第二张图：
+
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/cache2.png)
+
+这个缓存的内容，并不是所谓的缓存为具体文件，而是请求本身的缓存，chrome把请求头部信息和请求体
 本身都进行了缓存，大家可以看一下下面的信息。在我们实际上把这部分请求头存了下来。
 
-’‘’
+```javascript
 HTTP/1.1 200 OK
 Date: Mon, 22 Jun 2015 05:14:26 GMT
 Via: 1.1 varnish
@@ -111,17 +127,10 @@ Last-Modified: Tue, 29 Jul 2014 16:13:00 GMT
 Server: GitHub.com
 Content-Length: 2892
 Accept-Ranges: bytes
-‘’‘
+```
 
-![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/cache1.png)
-
-
-![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/cache2.png)
-
-chrome是如何获取缓存信息的，如果我们自己开发extension的时候如何获取缓存图片（不通过chrome内部机制）
-ajax
-直接导入
-iframe
+其实看到这里的时候我突然有一个方法，chrome是如何获取缓存信息的，如果我们自己开发extension的时候如何获取缓存图片（不通过chrome内部机制）比如：ajax、直接导入、iframe如果我们可以读取chrome自带的缓存信息，是不是方面我们做一些用户信息收集类的操作。
+当然这部分获取信息，一定需要用户的授权。
 
 注意chrome的安全策略：Content-Security-Policy
 
