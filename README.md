@@ -132,7 +132,7 @@ Accept-Ranges: bytes
 其实看到这里的时候我突然有一个方法，chrome是如何获取缓存信息的，如果我们自己开发extension的时候如何获取缓存图片（不通过chrome内部机制）比如：ajax、直接导入、iframe如果我们可以读取chrome自带的缓存信息，是不是方面我们做一些用户信息收集类的操作。
 当然这部分获取信息，一定需要用户的授权。或者通过设置chrome的安全策略：Content-Security-Policy来指定加载资源
 
-附上 Content-Security-Policy 指令说明，http://www.2cto.com/Article/201307/230739.html，服务器端再返回的时候只要返回相应的头部信息就可以了。
+服务器端再返回的时候只要返回相应的头部信息就可以了。附上 Content-Security-Policy 指令说明，http://www.2cto.com/Article/201307/230739.html
 
 
 
@@ -142,12 +142,20 @@ Accept-Ranges: bytes
 
 ##### 查询sokect
 
-socket transport_socket_pool  Idle占用
+socket transport_socket_pool  Idle占用当我们调试socket的时候。
+可以通过观察这个指示器来进行观察，个人感觉调试的时候socket意义不太大，但是如果想了解socket建立连接，
+以及释放的过程还是不错的。点击响应的socket会进入到详细信息。
 
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/sokect.png)
 
 
-test测
+##### test测试
+
+个人感觉最有用的功能之一，可以查看访问一个地址在使用不同代理（链路）的时候所消耗的时间（Pv4,Pv6还做了区分）
+如下图：
+
+另外当我们输入错误的网址的时候他还能解析出来我们访问错误网址时候返回的时间，以及错误原因。
+
 
 DNS到期 Expired过期， 总数Capacity
 
@@ -156,9 +164,9 @@ SPDY   Alternate Protocol Mappings备用协议映射
 SPDY协议是Google提出的基于传输控制协议(TCP)的应用层协议，通过压缩、多路复用和优先级来缩短加载时间。该协议是一种更加快速的内容传输协议。是http协议的增强
 CDN供应商Akamai的首席产品架构师GuyPodjarny发现，在目前的实际环境中，SPDY并不快，它只是比HTTPS略快4.5%，比HTTP慢3.4%。SPDY需要客户端和服务端的支持，而服务器的优化对速度提高至关重要，现阶段除了Google外支持SPDY的第三方并不普遍。
 2012年7月，Facebook工程师道格·比弗表示，Facebook已经开始执行SPDY协议，并将在全球范围内部署。
-
-Raw HTTPS
-SPDY/3.1
+后面是httpWatch对三个协议的各方面对比。
+Raw HTTPS :
+SPDY/3.1 :
 HTTP/2
 性能对比
 http://blog.httpwatch.com/2015/01/16/a-simple-performance-comparison-of-https-spdy-and-http2/
