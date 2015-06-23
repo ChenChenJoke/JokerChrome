@@ -219,13 +219,8 @@ chrome的内存消耗，我们可以看一下，有哪些
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/user-actions.png)
 
 
-
-
-
-
-
-
-
+> 后记：其实chrome里面有趣的小工具不止这些，有的人可能会说这些东西并没有什么卵用。有的人可能用到里面其中一个，或者其中几个。
+但是我始终感觉，太有必要了解我们朝夕相处的伙伴。
 
 
 
