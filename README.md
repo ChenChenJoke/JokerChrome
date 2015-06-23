@@ -154,12 +154,25 @@ socket transport_socket_pool  Idle占用当我们调试socket的时候。
 个人感觉最有用的功能之一，可以查看访问一个地址在使用不同代理（链路）的时候所消耗的时间（Pv4,Pv6还做了区分）
 如下图：
 
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/netInternalsTest.png)
+
 另外当我们输入错误的网址的时候他还能解析出来我们访问错误网址时候返回的时间，以及错误原因。
 
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/netInternalsTestFail.png)
 
-DNS到期 Expired过期， 总数Capacity
+至于错误原因我就不一一分析了，这些愿意大家用搜索引擎都可以查到。
 
-SPDY   Alternate Protocol Mappings备用协议映射
+##### DNS到期 
+
+
+在这个选项卡中，能看到dns解析的过期时间，当然标记Expired的是已经过期的，另外我们还可以看到
+一个域名到底对应了多少个ip，当dns服务器出现问题的时候我们可以直接那这些ip访问网站（如果他们对ip没有做处理，
+或者不需要域名相关的操作的时候）。
+
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/netInternalsDns.png)
+
+
+##### SPDY  
 
 SPDY协议是Google提出的基于传输控制协议(TCP)的应用层协议，通过压缩、多路复用和优先级来缩短加载时间。该协议是一种更加快速的内容传输协议。是http协议的增强
 CDN供应商Akamai的首席产品架构师GuyPodjarny发现，在目前的实际环境中，SPDY并不快，它只是比HTTPS略快4.5%，比HTTP慢3.4%。SPDY需要客户端和服务端的支持，而服务器的优化对速度提高至关重要，现阶段除了Google外支持SPDY的第三方并不普遍。
@@ -174,23 +187,23 @@ http://blog.httpwatch.com/2015/01/16/a-simple-performance-comparison-of-https-sp
 
 ### thumbnails浏览器快照,chrome://thumbnails
 
+主要是我们访问的页面的，页面快照，被照下来的图片都是data:image/png;base64这种形式的，所以没有地址，也不要想着复用了。
+
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/thumbnails.png)
 
 
 
 ### memory-redirect浏览器内存消耗,chrome://memory-redirect
 
-![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/memoryRedirect.png)
-
-
-### 分析器,chrome://profiler
-
-> MARK http://blog.jobbole.com/31178/  ,内存对比，优化方案
+chrome的内存消耗，我们可以看一下，有哪些
 
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/memoryRedirect.png)
+
 
 
 ### 追踪访问URL,chrome://tracing/ ,包括浏览器和渲染过程非常详细,
+
+你可以选择自己感兴趣的页面，进行数据的收集以及分析，这里面写的非常详细，甚至详细到浏览器每一个方法所消耗的时间。
 
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/tracing.png)
 
@@ -198,12 +211,9 @@ http://blog.httpwatch.com/2015/01/16/a-simple-performance-comparison-of-https-sp
 
 > tranc图一
 
-
-
 ### 用户行为分析，包括用户点击切换tab,chrome://user-actions
 
 > 主要手机用户行为，当过切换tab，而且包括浏览器点击（有效或者无效）
-
 
 
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/user-actions.png)
