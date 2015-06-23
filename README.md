@@ -6,7 +6,7 @@ chrome的常用功能我就不说了，F12,element,network,timeline,resources,ad
 
 
 
-> 估计很多人不知道Chrome地址栏功能，作为一个Chrome用户，必须懂的。以下我要介绍的这些指令在Chrome地址栏输入即可
+> 估计很多人不知道Chrome地址栏功能，我作为一个low到家的前端工程师，必须懂的。以下我要介绍的这些指令在Chrome地址栏输入即可
 
 about:version – 显示当前版本 也可以是chrome-resource://about/
 
@@ -96,10 +96,9 @@ Chrome 维护着一个历史记录，内容包括用户输入的前置文字，�
 chrome://cache,下面我们输入网址可以先来看一下，chrome到底都缓存了什么东西。
 第一张图是，我们的缓存列表，里面缓缓存了我们访问了code为2XX的数据，这个2XX指令码指的http的code
 可不是前后端同学自定义的code.跳转类的3开头的不会被缓存（301永久跳转,302临时跳转）,4XX也不会,5XX的暂时还没试过。
-关于code码的解释，附上一个链接。http://justcoding.iteye.com/blog/833058。这里解释的还可以。另外，如果像
-更深入了解的同学，可以看一下 http协议权威指南。也可以了解下restful思想，也就是Roy Fielding教授在参与定制http
-协议的时候主推的一种设计思想。也就是Http是应用层协议的原因之一（Apache基金会有一个开源项目Sling，这个项目就是完全
-基于Restful思想设计的，他们用jcr进行存储，url作为被操作项，request method本身作为操作符）。
+关于code码的解释，附上一个链接。
+http://justcoding.iteye.com/blog/833058。
+这里解释的还可以。另外，如果像更深入了解的同学，可以看一下 http协议权威指南。也可以了解下restful思想，也就是Roy Fielding教授在参与定制http协议的时候主推的一种设计思想。也就是Http是应用层协议的原因之一（Apache基金会有一个开源项目Sling，这个项目就是完全基于Restful思想设计的，他们用jcr进行存储，url作为被操作项，request method本身作为操作符）。
 
 
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/cache1.png)
