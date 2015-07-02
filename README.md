@@ -55,6 +55,65 @@ about:flags – Chrome高级设置
 
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/NPAPI.png)
 
+#####那么我们的浏览器页面是如何调用我们的桌面程序的呢？
+
+######IE
+
+我来解释一下他们的工作原理。先拿IE举例，首先，我们在页面上创建了一个名字叫做ActiveXObject的插件，大家都知道IE浏览器是可以通过
+
+这个插件对磁盘文件进行操作（桌面程序对ActiveXObject开放了用户级别的权限）。知道我们的应用程序继承了一个windows系统的类，
+
+并且声明自己是一个合法的插件，如下图：
+
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/IE9before.JPG)
+
+只要实现IOjectSafetyImpl这个接口就可以了（此方法只适用于IE9之前，在IE9之后需要实现另一个接口，并且参数也变多了）
+
+所以我们可以直接通过ActiveXObject启动某一个可执行文件。因为我们的应用程序是被操作系统认为是安全的，可以被调用的。
+
+
+######chrome
+
+> 首先我想问一下非IE浏览器能不能操作本地资源？
+
+接下来我们说一下chrome,这个可能会比较复杂，首先我们的应用你程序要声明一个动态库
+
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/NPpluginGetOn.JPG)
+
+这个就是我们应用程序的动态库信息，他会被写入注册表，方便我们像用他的时候能够找到他。
+
+然后我们安装完直播助手时候还会生成另外的文件两个dll,注册表里也包含这部分路径信息。
+
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/dll.JPG)
+
+OK现在我们需要再chrome页面注册一个我们动态库里声明的插件了。
+
+![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/htmlNP.png)
+
+当页面初始化之后，我们在页面实例化了一个np插件。目前我们还不能调用我们的连麦，直播等等方法，我们先需要启动
+
+我们的动态库，我们调用了np插件里面我们动态库的启动指令，然后np插件跟着这条指令查找到我们应用程序的注册表，
+
+在注册表里，我们查找到了应用程序下的.dll的文件，然后dll文件开启一个线程，启动我们的.exe文件。然后dll自动销毁。
+
+这样我们的直播助手就启动了起来（这里主要np插件大多数的调用桌面程序的方法都是这样，由于安全级别的问题，最开始浏览器是
+
+没有吧直接启动某个可执行文件的权限放在np插件中，如果你安装了迅雷的话，可以查看一下迅雷是有两个插件来启动桌面程序。
+
+一个是np插件，另一个是通过extension的方式的迅雷迷你版）。至此我们的页面就可以跟桌面插件进行单项交互了。
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 地址预测chrome://predictors/
 
 通过 Omnibox 优化与用户的交互，引入 Omnibox 是 Chrome 的一项创新， 并不是简单地处理目标的 URL。除了记录之前访问过的页面 URL，它还与搜索引擎的整合，并且支持在历史记录中进行全文搜索(比如，直接输入页面名称)。
