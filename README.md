@@ -55,9 +55,9 @@ about:flags – Chrome高级设置
 
 ![image](https://github.com/ChenChenJoke/JokerChrome/blob/master/images/NPAPI.png)
 
-#####那么我们的浏览器页面是如何调用我们的桌面程序的呢？
+##### 那么我们的浏览器页面是如何调用我们的桌面程序的呢？
 
-######IE
+###### IE
 
 我来解释一下他们的工作原理。先拿IE举例，首先，我们在页面上创建了一个名字叫做ActiveXObject的插件，大家都知道IE浏览器是可以通过
 
@@ -72,7 +72,7 @@ about:flags – Chrome高级设置
 所以我们可以直接通过ActiveXObject启动某一个可执行文件。因为我们的应用程序是被操作系统认为是安全的，可以被调用的。
 
 
-######chrome
+###### chrome
 
 > 首先我想问一下非IE浏览器能不能操作本地资源？
 
